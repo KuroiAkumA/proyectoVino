@@ -17,9 +17,19 @@ public class ListaVinos {
 
     public ListaVinos() {
     }
+    
+    public void agregarVino(Vino obj){
+        listaVino.add(obj);
+    }
+    
+    public void listar(){
+        for(Vino x : listaVino){
+            System.out.println(x.toString());
+        }
+    }
 
     public ArrayList<Vino> getListaVino() {
-        return listaVino;
+        return this.listaVino;
     }
 
     public void setListaVino(ArrayList<Vino> listaVino) {
