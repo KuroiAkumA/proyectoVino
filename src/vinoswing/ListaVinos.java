@@ -17,6 +17,10 @@ public class ListaVinos {
 
     public ListaVinos() {
     }
+    
+    public void agregarVino(Vino obj){
+        listaVino.add(obj);
+    }
 
     public ArrayList<Vino> getListaVino() {
         return listaVino;

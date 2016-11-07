@@ -12,14 +12,12 @@ package vinoswing;
 public class Cepa {
     
     private String tipoCepa;
-    private String descripcionCepa;
 
     public Cepa() {
     }
 
-    public Cepa(String tipoCepa, String descripcionCepa) {
+    public Cepa(String tipoCepa) {
         this.tipoCepa = tipoCepa;
-        this.descripcionCepa = descripcionCepa;
     }
 
     public String getTipoCepa() {
@@ -28,16 +26,6 @@ public class Cepa {
 
     public void setTipoCepa(String tipoCepa) {
         this.tipoCepa = tipoCepa;
-    }
+    }  
 
-    public String getDescripcionCepa() {
-        return descripcionCepa;
-    }
-
-    public void setDescripcionCepa(String descripcionCepa) {
-        this.descripcionCepa = descripcionCepa;
-    }
-    
-    
-    
 }
