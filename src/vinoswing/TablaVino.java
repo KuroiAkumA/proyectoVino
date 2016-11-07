@@ -11,21 +11,13 @@ import javax.swing.JOptionPane;
  *
  * @author omar-jp
  */
-public class TablaVino extends javax.swing.JFrame { 
-        Cepa cepa;
-        Barrica barrica;
-        Vino vino;
-        Suelo suelo;
-        ListaVinos list;
+public class TablaVino extends javax.swing.JFrame {         
+        private ListaVinos list;
     /**
      * Creates new form TablaVino
      */
     public TablaVino() {
-        this.cepa = new Cepa();
-        this.barrica = new Barrica();
-        this.vino = new Vino();
-        this.suelo = new Suelo();
-        this.list = new ListaVinos();
+        list = new ListaVinos();
         initComponents();
     }
 
@@ -211,23 +203,29 @@ public class TablaVino extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-              if(!Codigo.getText().equals("")){
-                  barrica.setTipoBarrica(jComboBox4.getSelectedItem().toString());
-                  cepa.setTipoCepa(jComboBox5.getSelectedItem().toString());
-                  suelo.setTipoSuelo(jComboBox3.getSelectedItem().toString());
-                  vino.setBarrica(barrica);
-                  vino.setCepa(cepa);
-                  vino.setSuelo(suelo);
-                  vino.setClacificacionVino(jComboBox2.getSelectedItem().toString());
-                  vino.setTipoVino(jComboBox1.getSelectedItem().toString());
-                  vino.setCodigoVino(Codigo.getText());
-                  JOptionPane.showMessageDialog(null, "Vino Agregado!");
-                  list.agregarVino(vino);
-              }else
-                  JOptionPane.showMessageDialog(null, "ERROR NO HAY CODIGO");
+            Cepa cepa = new Cepa();
+            Barrica barrica = new Barrica();
+            Vino vino = new Vino();
+            Suelo suelo = new Suelo();
+            if(!Codigo.getText().equals("")){
+                barrica.setTipoBarrica(jComboBox4.getSelectedItem().toString());
+                cepa.setTipoCepa(jComboBox5.getSelectedItem().toString());
+                suelo.setTipoSuelo(jComboBox3.getSelectedItem().toString());
+                vino.setBarrica(barrica);
+                vino.setCepa(cepa);
+                vino.setSuelo(suelo);
+                vino.setClacificacionVino(jComboBox2.getSelectedItem().toString());
+                vino.setTipoVino(jComboBox1.getSelectedItem().toString());
+                vino.setCodigoVino(Codigo.getText());
+                this.list.agregarVino(vino);
+            }else
+                JOptionPane.showMessageDialog(null, "ERROR NO HAY CODIGO");
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        FrameLista frameList = new FrameLista();
+        frameList.cargarDatos(this.list.getListaVino());
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 

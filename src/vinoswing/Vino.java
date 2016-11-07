@@ -22,6 +22,11 @@ public class Vino {
         this.cepa = cepa;
     }
 
+    @Override
+    public String toString() {
+        return "Vino{" + "codigoVino=" + codigoVino + ", tipoVino=" + tipoVino + ", clacificacionVino=" + clacificacionVino + ", suelo=" + suelo + ", barrica=" + barrica + ", cepa=" + cepa + '}';
+    }  
+
     public String getCodigoVino() {
         return codigoVino;
     }
