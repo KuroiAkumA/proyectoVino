@@ -86,6 +86,11 @@ public class TablaVino extends javax.swing.JFrame {
         });
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tinto", "Blanco", "Rosado", "Espumante" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nacional", "Importado", "Exportado" }));
 
@@ -94,6 +99,11 @@ public class TablaVino extends javax.swing.JFrame {
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Roble Frances", "Roble Americano", "Roble Rumano", "Roble Ibérico" }));
 
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cavernete Souvignon", "Carmenete", " " }));
+        jComboBox5.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                jComboBox5ComponentHidden(evt);
+            }
+        });
 
         jButton3.setText("Lista de Vinos");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -228,6 +238,21 @@ public class TablaVino extends javax.swing.JFrame {
         frameList.cargarDatos(this.list.getListaVino());
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+        Object x = null;
+        if(!jComboBox1.getSelectedItem().toString().equalsIgnoreCase("tinto")){
+            x = jComboBox5.getItemAt(0);
+            jComboBox5.removeItem(x);
+        }else{
+            jComboBox5.addItem("Cavernet Souvignon");
+        }
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jComboBox5ComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jComboBox5ComponentHidden
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox5ComponentHidden
 
     
     /**
