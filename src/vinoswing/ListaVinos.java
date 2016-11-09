@@ -6,6 +6,7 @@
 package vinoswing;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,7 +20,17 @@ public class ListaVinos {
     }
     
     public void agregarVino(Vino obj){
-        listaVino.add(obj);
+        boolean seRepite = true;
+        for(Vino x: listaVino){
+            if(x.getCodigoVino().equals(obj.getCodigoVino())){
+                seRepite = false;
+                break;
+            }            
+        }
+        if(seRepite)
+            listaVino.add(obj);
+        else
+            JOptionPane.showMessageDialog(null, "El codigo de vino ya existe");
     }
 
     public ArrayList<Vino> getListaVino() {

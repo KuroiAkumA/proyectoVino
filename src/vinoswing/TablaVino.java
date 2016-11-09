@@ -217,19 +217,25 @@ public class TablaVino extends javax.swing.JFrame {
             Barrica barrica = new Barrica();
             Vino vino = new Vino();
             Suelo suelo = new Suelo();
+            int i ;
+            int e;
             if(!Codigo.getText().equals("")){
-                barrica.setTipoBarrica(jComboBox4.getSelectedItem().toString());
-                cepa.setTipoCepa(jComboBox5.getSelectedItem().toString());
-                suelo.setTipoSuelo(jComboBox3.getSelectedItem().toString());
-                vino.setBarrica(barrica);
-                vino.setCepa(cepa);
-                vino.setSuelo(suelo);
-                vino.setClacificacionVino(jComboBox2.getSelectedItem().toString());
-                vino.setTipoVino(jComboBox1.getSelectedItem().toString());
-                vino.setCodigoVino(Codigo.getText());
-                this.list.agregarVino(vino);
-            }else
-                JOptionPane.showMessageDialog(null, "ERROR NO HAY CODIGO");
+                    barrica.setTipoBarrica(jComboBox4.getSelectedItem().toString());
+                    cepa.setTipoCepa(jComboBox5.getSelectedItem().toString());
+                    suelo.setTipoSuelo(jComboBox3.getSelectedItem().toString());
+                    vino.setBarrica(barrica);
+                    vino.setCepa(cepa);
+                    vino.setSuelo(suelo);
+                    vino.setClacificacionVino(jComboBox2.getSelectedItem().toString());
+                    vino.setTipoVino(jComboBox1.getSelectedItem().toString());
+                    vino.setCodigoVino(Codigo.getText());
+                    this.list.agregarVino(vino);
+            }else{
+                 JOptionPane.showMessageDialog(null, "ERROR NO HAY CODIGO");  
+                
+            }
+            
+            
     }//GEN-LAST:event_jButton1ActionPerformed
 
     
